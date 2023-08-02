@@ -6,25 +6,25 @@ import { Metadata } from "next";
 interface pageProps {}
 
 export const metadata: Metadata = {
-  title: "Characters",
+   title: "Characters",
 };
 
 const fetchCharacters = async () => {
-  return await getCharacters({});
+   return await getCharacters({});
 };
 
 const page = async ({}) => {
-  const characters = await fetchCharacters();
-  return (
-    <>
-      <Head>
-        <title>Characters</title>
-      </Head>
-      {characters.map((character) => (
-        <Card key={character.id} data={character} />
-      ))}
-    </>
-  );
+   const characters = await fetchCharacters();
+   return (
+      <>
+         <Head>
+            <title>Characters</title>
+         </Head>
+         {characters.map((character) => (
+            <Card key={character.id} data={character} />
+         ))}
+      </>
+   );
 };
 
 export default page;

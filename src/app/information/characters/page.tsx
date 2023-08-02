@@ -1,9 +1,7 @@
-import Head from "next/head";
-import { getCharacters } from "./services";
-import { Card } from "@/components";
 import { Metadata } from "next";
+import { getCharacters } from "./services";
+import { CharacterCard } from "@/components";
 
-interface pageProps {}
 
 export const metadata: Metadata = {
    title: "Characters",
@@ -15,15 +13,11 @@ const fetchCharacters = async () => {
 
 const page = async ({}) => {
    const characters = await fetchCharacters();
+   
    return (
-      <>
-         <Head>
-            <title>Characters</title>
-         </Head>
-         {characters.map((character) => (
-            <Card key={character.id} data={character} />
-         ))}
-      </>
+      <div className="bg-zinc-800 flex sm:flex-col sm:items-center sm:justify-center  md:flex-row md:items-center flex-wrap md:justify-center p-8 lg:gap-4 box-border">
+         { characters.map( character => (<CharacterCard key={ character.id } character={ character} />))}
+      </div>
    );
 };
 

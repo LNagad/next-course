@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Character } from "@/app/information/characters/models";
+import { CharacterStatus } from "..";
 
 const CharacterCard = ( {character} : { character: Character } ) => {
    return (
@@ -26,12 +27,10 @@ const CharacterCard = ( {character} : { character: Character } ) => {
                   {character.name}
                </p>
                <div className="flex gap-2 items-center -mt-1 text-white">
-                  <span className="block bg-green-500 w-2 h-2 rounded-full"></span>
-                  <p className="text-sm font-medium ">
-                     {character.status ? "Alive" : "Dead"}
-                  </p>
+                  
+                  <CharacterStatus status={ character.status } />
               -
-                  <p className="text-sm font-medium ">
+                  <p className="text-[1rem]  font-medium ">
                      {character.species}
                   </p>
                </div>

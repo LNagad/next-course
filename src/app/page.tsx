@@ -30,7 +30,7 @@ const App = async () => {
                   return (
                      <div
                         key={character.id}
-                        className="sm:w-full md:flex lg:w-5/12 mb-6 rounded-2xl"
+                        className="w-full md:flex lg:w-5/12 mb-6 rounded-2xl"
                         style={{ backgroundColor: "rgb(60, 62, 68)" }}
                      >
                         <div className="sm:w-full md:w-4/12 lg:w-6/12">

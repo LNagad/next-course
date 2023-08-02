@@ -3,8 +3,8 @@ import { getCharacters } from "./information/characters/services";
 import Image from "next/image";
 
 const App = async () => {
-   const data = await getCharacters({ page: 6 });
-
+   const data = await getCharacters({ page: 2 });
+   
    return (
       <div>
          <header>
@@ -24,8 +24,9 @@ const App = async () => {
                />
             </div>
 
-            <div className=" bg-zinc-800 flex sm:flex-col md:flex-row md:items-center flex-wrap md:justify-center p-8 lg:gap-4 box-border">
-               {data.map((character) => {
+            <div className="bg-zinc-800 flex sm:flex-col sm:items-center sm:justify-center  md:flex-row md:items-center flex-wrap md:justify-center p-8 lg:gap-4 box-border">
+               {data.map((character, index) => {
+                  if ( index > 5 ) return;
                   return (
                      <div
                         key={character.id}

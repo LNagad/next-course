@@ -15,11 +15,11 @@ const fetchLocations = async () => {
 const page = async ({}) => {
    const locations = await fetchLocations();
    return (
-      <>
+      <div className="flex flex-col md:flex-row md:flex-wrap md:justify-evenly p-8 gap-4">
          {locations.map((location) => {
             return <Card key={location.id} data={location} />;
          })}
-      </>
+      </div>
    );
 };
 

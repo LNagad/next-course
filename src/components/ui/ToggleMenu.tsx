@@ -1,3 +1,5 @@
+import "./styles.css";
+
 interface Props {
   setToggleMenu: (value: React.SetStateAction<boolean>) => void;
 }

@@ -1,6 +1,4 @@
 "use client";
-
-import { FC } from "react";
 import { usePathname } from "next/navigation";
 import { NavBar } from "@/components";
 
@@ -8,11 +6,10 @@ interface layoutProps {
   children: React.ReactNode;
 }
 
-const Layout: FC<layoutProps> = ({ children }) => {
+const Layout = ({ children }: layoutProps) => {
  
    /* Get the current route */
    const currentRoute = usePathname();
-
    return (
       <>
          <NavBar activeLink={ currentRoute } />

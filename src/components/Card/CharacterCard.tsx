@@ -1,7 +1,9 @@
 
 import Image from "next/image";
-import { Character } from "@/app/information/characters/models";
+
 import { CharacterStatus } from "..";
+import { Character } from "@/app/(information)/characters/models";
+import { genericBlur } from "@/models";
 
 const CharacterCard = ({ character } : { character: Character } ) => {
    return (
@@ -13,12 +15,13 @@ const CharacterCard = ({ character } : { character: Character } ) => {
          <div className="sm:w-full md:w-4/12 lg:w-6/12">
             <Image
                className="w-full rounded-t-2xl md:rounded-none md:rounded-l-2xl  md:h-full"
-               quality={ 100 }
-               unoptimized={ true }
+               quality={100}
+               blurDataURL={ genericBlur }
+               placeholder="blur"
                src={ character.image }
                alt={ character.name }
-               width={ 60 }
-               height={ 60 }
+               width={ 200 }
+               height={ 200 }
             />
          </div>
          <div className="p-4 sm:w-full">
@@ -43,7 +46,7 @@ const CharacterCard = ({ character } : { character: Character } ) => {
                <p className="text-[0.975rem] text-zinc-400">
                 First seen in:
                </p>
-               <p className="text-lg">{ character.location.name }</p>
+               <p className="text-lg">{ character.origin.name }</p>
             </div>
             
          </div>

@@ -1,4 +1,4 @@
-import { Routes } from "@/app/models";
+import { Routes } from "@/models";
 import Link from "next/link";
 import { NavBarProps } from "./NavBar";
 
